@@ -4,7 +4,8 @@ public class TestWebGLScript : MonoBehaviour
 {
     private void Start()
     {
-        WebGLLib.RegisterScreenOrientation(OnScreenOrientation);
+        WebGLLib.OnScreenOrientation = OnScreenOrientation;
+        WebGLLibPlugin.RegisterScreenOrientation(WebGLLib.RegisterScreenOrientation);
     }
 
     private void OnScreenOrientation(string orientation)
